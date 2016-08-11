@@ -1,6 +1,8 @@
 #include <stdlib.h>
 #include <check.h>
+#include <errno.h>
 #include "../src/roman_to_arabic.h"
+#include "../src/roman_error_codes.h"
 #include "roman_to_arabic_suite.h"
 
 START_TEST(given_I_when_to_arabic_then_1) {
@@ -111,6 +113,14 @@ START_TEST(given_MMMCMXCIX_when_to_arabic_then_3999) {
 }
 END_TEST
 
+START_TEST(given_IIII_when_to_arabic_then_negative_one_invalid) {
+	int result = to_arabic("IIII");
+	ck_assert_int_eq(-1, result);
+	ck_assert_int_eq(ROMAN_NUMERAL_LIMIT, errno);
+}
+END_TEST
+
+
 Suite * roman_to_arabic_suite(void) {
 	Suite *suite;
 	TCase *testCase;
@@ -137,6 +147,8 @@ Suite * roman_to_arabic_suite(void) {
 	tcase_add_test(testCase, given_MXCIX_when_to_arabic_then_1099);
 	tcase_add_test(testCase, given_DCCCLXXXIV_when_to_arabic_then_884);
 	tcase_add_test(testCase, given_MMMCMXCIX_when_to_arabic_then_3999);
+
+	tcase_add_test(testCase, given_IIII_when_to_arabic_then_negative_one_invalid);
 
 	suite_add_tcase(suite, testCase);
 	return suite;

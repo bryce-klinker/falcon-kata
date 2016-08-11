@@ -62,6 +62,20 @@ START_TEST(given_MMMCMXCIX_when_is_roman_valid_then_true) {
 }
 END_TEST
 
+START_TEST(given_I_when_is_roman_valid_then_true) {
+	bool isValid = is_roman_valid("I");
+	ck_assert(isValid == true);
+	ck_assert_int_eq(ROMAN_SUCCESS, errno);
+}
+END_TEST
+
+START_TEST(given_IV_when_is_roman_valid_then_true) {
+	bool isValid = is_roman_valid("IV");
+	ck_assert(isValid == true);
+	ck_assert_int_eq(ROMAN_SUCCESS, errno);
+}
+END_TEST
+
 Suite * roman_validator_suite(void) {
 	Suite *suite;
 	TCase *testCase;
@@ -79,6 +93,8 @@ Suite * roman_validator_suite(void) {
 	tcase_add_test(testCase, given_VV_when_is_roman_valid_then_false);
 
 	tcase_add_test(testCase, given_MMMCMXCIX_when_is_roman_valid_then_true);
+	tcase_add_test(testCase, given_I_when_is_roman_valid_then_true);
+	tcase_add_test(testCase, given_IV_when_is_roman_valid_then_true);
 
 	suite_add_tcase(suite, testCase);
 	return suite;

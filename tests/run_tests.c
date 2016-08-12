@@ -20,5 +20,6 @@ int main(void) {
 	failed_count = srunner_ntests_failed(runner);
 	srunner_free(runner);
 
+	free(suite);
 	return (failed_count == 0) ? EXIT_SUCCESS : EXIT_FAILURE;
 }

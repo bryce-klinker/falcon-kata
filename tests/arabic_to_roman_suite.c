@@ -36,6 +36,7 @@ END_TEST
 START_TEST(given_10_when_to_roman_then_X) {
 	char *result = to_roman(10);
 	ck_assert_str_eq(result, "X");
+	free(result);
 };
 END_TEST
 

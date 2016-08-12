@@ -15,6 +15,7 @@ END_TEST
 START_TEST(given_II_and_I_when_add_then_III) {
 	char * result = add_roman_numerals("II", "I");
 	ck_assert_str_eq(result, "III");
+	free(result);
 }
 END_TEST
 

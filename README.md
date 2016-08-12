@@ -44,3 +44,12 @@ This library will return error codes in the `errno` value. The error codes can b
 | ROMAN_NEGATIVE_NOT_VALID | 5     | The input provided was negative or would result in a negative roman numeral which is invalid | 
 | ROMAN_NUMERAL_TOO_LARGE  | 6     | The input provided would result in a roman numeral wich is larger than 3999                  |
 | ROMAN_ZERO_IS_NOT_VALID  | 7     | The input provided would result in zero which is not a valid roman numeral                   |
+
+## Important
+This library relies on the caller to free memory when calling arabic_to_roman.c's to_roman method and roman_calculator.c's add_roman_numerals and subtract_roman_numerals methods. 
+These methods will allocate memory internally to create the resulting roman numeral string.
+<br/>
+This library also uses `errno.h` to report error codes. When calling a method that returns strings you 
+will get back a description of the error in the resulting string and errno will be set to one of the 
+above error codes. However when a method returns an integer the library will return -1 and set the errno to 
+one of the above error codes.  

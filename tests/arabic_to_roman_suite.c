@@ -15,6 +15,7 @@ END_TEST
 START_TEST(given_4_when_to_roman_then_IV) {
 	char *result = to_roman(4);
 	ck_assert_str_eq(result, "IV");
+	free(result);
 }
 END_TEST
 

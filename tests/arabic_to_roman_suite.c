@@ -57,6 +57,7 @@ END_TEST
 START_TEST(given_90_when_to_roman_then_XC) {
 	char *result = to_roman(90);
 	ck_assert_str_eq(result, "XC");
+	free(result);
 }
 END_TEST
 

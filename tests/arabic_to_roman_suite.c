@@ -29,6 +29,7 @@ END_TEST
 START_TEST(given_9_when_to_roman_then_IX) {
 	char *result = to_roman(9);
 	ck_assert_str_eq(result, "IX");
+	free(result);
 };
 END_TEST
 

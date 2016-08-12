@@ -43,6 +43,7 @@ END_TEST
 START_TEST(given_40_when_to_roman_then_XL) {
 	char *result = to_roman(40);
 	ck_assert_str_eq(result, "XL");
+	free(result);
 };
 END_TEST
 

@@ -8,6 +8,7 @@
 START_TEST(given_I_and_I_when_add_then_II) {
 	char * result = add_roman_numerals("I", "I");
 	ck_assert_str_eq(result, "II");
+	free(result);
 }
 END_TEST
 

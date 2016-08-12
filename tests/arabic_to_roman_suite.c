@@ -64,6 +64,7 @@ END_TEST
 START_TEST(given_100_when_to_roman_then_C) {
 	char *result = to_roman(100);
 	ck_assert_str_eq(result, "C");
+	free(result);
 }
 END_TEST
 

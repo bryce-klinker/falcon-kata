@@ -115,6 +115,7 @@ START_TEST(given_CM_and_X_when_subtract_then_DCCCXC) {
 
 	char * result = subtract_roman_numerals("CM", "X");
 	ck_assert_str_eq(result, "DCCCXC");
+	free(result);
 }
 END_TEST
 

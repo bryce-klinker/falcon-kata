@@ -89,6 +89,7 @@ END_TEST
 START_TEST(given_II_and_I_when_subtract_then_I) {
 	char * result = subtract_roman_numerals("II", "I");
 	ck_assert_str_eq(result, "I");
+	free(result);
 }
 END_TEST
 

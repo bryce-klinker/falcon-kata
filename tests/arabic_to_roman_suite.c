@@ -105,6 +105,7 @@ END_TEST
 START_TEST(given_999_when_to_roman_then_CMXCIX) {
 	char *result = to_roman(999);
 	ck_assert_str_eq(result, "CMXCIX");
+	free(result);
 }
 END_TEST
 

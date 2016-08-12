@@ -8,6 +8,7 @@
 START_TEST(given_1_when_to_roman_then_I) {
 	char *result = to_roman(1);
 	ck_assert_str_eq(result, "I");
+	free(result);
 }
 END_TEST
 

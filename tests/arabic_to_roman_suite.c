@@ -50,6 +50,7 @@ END_TEST
 START_TEST(given_50_when_to_roman_then_L) {
 	char *result = to_roman(50);
 	ck_assert_str_eq(result, "L");
+	free(result);
 };
 END_TEST
 

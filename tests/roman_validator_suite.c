@@ -55,6 +55,13 @@ START_TEST(given_VV_when_is_roman_valid_then_false) {
 }
 END_TEST
 
+START_TEST(given_DCCCCLXXXIV_when_is_roman_valid_then_false) {
+	bool isValid = is_roman_valid("DCCCCLXXXIV");
+	ck_assert(isValid == false);
+	ck_assert_int_eq(ROMAN_NUMERAL_LIMIT, errno);
+}
+END_TEST
+
 START_TEST(given_MMMCMXCIX_when_is_roman_valid_then_true) {
 	bool isValid = is_roman_valid("MMMCMXCIX");
 	ck_assert(isValid == true);
@@ -98,6 +105,8 @@ Suite * roman_validator_suite(void) {
 	tcase_add_test(testCase, given_DD_when_is_roman_valid_then_false);
 	tcase_add_test(testCase, given_LL_when_is_roman_valid_then_false);
 	tcase_add_test(testCase, given_VV_when_is_roman_valid_then_false);
+
+	tcase_add_test(testCase, given_DCCCCLXXXIV_when_is_roman_valid_then_false);
 
 	tcase_add_test(testCase, given_MMMCMXCIX_when_is_roman_valid_then_true);
 	tcase_add_test(testCase, given_I_when_is_roman_valid_then_true);

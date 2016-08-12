@@ -85,6 +85,7 @@ END_TEST
 START_TEST(given_900_when_to_roman_then_CM) {
 	char *result = to_roman(900);
 	ck_assert_str_eq(result, "CM");
+	free(result);
 }
 END_TEST
 

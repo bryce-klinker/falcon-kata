@@ -96,6 +96,7 @@ END_TEST
 START_TEST(given_IV_and_I_when_subtract_then_III) {
 	char * result = subtract_roman_numerals("IV", "I");
 	ck_assert_str_eq(result, "III");
+	free(result);
 }
 END_TEST
 

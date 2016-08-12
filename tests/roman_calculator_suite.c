@@ -103,6 +103,7 @@ END_TEST
 START_TEST(given_M_and_CM_when_subtract_then_C) {
 	char * result = subtract_roman_numerals("M", "CM");
 	ck_assert_str_eq(result, "C");
+	free(result);
 }
 END_TEST
 

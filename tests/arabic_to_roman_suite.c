@@ -71,6 +71,7 @@ END_TEST
 START_TEST(given_400_when_to_roman_then_CD) {
 	char *result = to_roman(400);
 	ck_assert_str_eq(result, "CD");
+	free(result);
 }
 END_TEST
 

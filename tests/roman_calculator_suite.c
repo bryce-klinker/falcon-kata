@@ -39,6 +39,7 @@ START_TEST(given_MCXVI_and_CM_when_add_then_CMIX) {
 	// MM         = 2000
 	char * result = add_roman_numerals("MCXVI", "DCCCLXXXIV");
 	ck_assert_str_eq(result, "MM");
+	free(result);
 }
 END_TEST
 

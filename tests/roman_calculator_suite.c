@@ -29,6 +29,7 @@ END_TEST
 START_TEST(given_IX_and_CM_when_add_then_CMIX) {
 	char * result = add_roman_numerals("IX", "CM");
 	ck_assert_str_eq(result, "CMIX");
+	free(result);
 }
 END_TEST
 

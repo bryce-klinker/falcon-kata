@@ -99,6 +99,7 @@ END_TEST
 START_TEST(given_103_when_to_roman_then_CIII) {
 	char *result = to_roman(103);
 	ck_assert_str_eq(result, "CIII");
+	free(result);
 }
 END_TEST
 

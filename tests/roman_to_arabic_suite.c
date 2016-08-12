@@ -134,6 +134,13 @@ START_TEST(given_VVDD_when_to_arabic_then_negative_one_invalid) {
 }
 END_TEST
 
+START_TEST(given_DCCCCLXXXIV_when_to_arabic_then_negative_one_invalid) {
+	int result = to_arabic("DCCCCLXXXIV");
+	ck_assert_int_eq(-1, result);
+	ck_assert_int_eq(ROMAN_NUMERAL_LIMIT, errno);
+}
+END_TEST
+
 Suite * roman_to_arabic_suite(void) {
 	Suite *suite;
 	TCase *testCase;
@@ -164,6 +171,7 @@ Suite * roman_to_arabic_suite(void) {
 	tcase_add_test(testCase, given_IIII_when_to_arabic_then_negative_one_invalid);
 	tcase_add_test(testCase, given_MMMM_when_to_arabic_then_negative_one_invalid);
 	tcase_add_test(testCase, given_VVDD_when_to_arabic_then_negative_one_invalid);
+	tcase_add_test(testCase, given_DCCCCLXXXIV_when_to_arabic_then_negative_one_invalid);
 
 	suite_add_tcase(suite, testCase);
 	return suite;

@@ -113,6 +113,7 @@ END_TEST
 START_TEST(given_1099_when_to_roman_then_MXCIX) {
 	char *result = to_roman(1099);
 	ck_assert_str_eq(result, "MXCIX");
+	free(result);
 }
 END_TEST
 

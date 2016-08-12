@@ -22,6 +22,7 @@ END_TEST
 START_TEST(given_5_when_to_roman_then_V) {
 	char *result = to_roman(5);
 	ck_assert_str_eq(result, "V");
+	free(result);
 }
 END_TEST
 

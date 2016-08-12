@@ -92,6 +92,7 @@ END_TEST
 START_TEST(given_1000_when_to_roman_then_M) {
 	char *result = to_roman(1000);
 	ck_assert_str_eq(result, "M");
+	free(result);
 }
 END_TEST
 
